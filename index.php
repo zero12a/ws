@@ -87,20 +87,6 @@ $server->on('open', function($server, $req){
     //echo json_encode($tmp,JSON_PRETTY_PRINT);
     $redis->close;
 
-    /*
-    $pubRedis = new swoole_redis;
-    $pubRedis->connect("172.17.0.1", 1234, function (swoole_redis $pubRedis, $data) {
-        echo "publish chat.all--------------------------";
-        if($pubRedis->subscribe("chat.all")){
-            $pubRedis->publish("chat.all",$msg);
-        }else{
-            echo "chat.all에 subscribe 실패 \n";
-        }
-        $pubRedis->close;
-    });
-    */
-    
-
 });
 
 $server->on('message', function($server, $frame) {
